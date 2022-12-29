@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+}
+
+body {
+  padding: 4rem 2rem;
+  background-color: rgba(0, 0, 0, 0.025);
+}
+
+.form-button {
+  margin-top: 1.5rem;
+}
+
+.table-container {
+  padding: 2rem;
+  margin-top: 4rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(194, 194, 194, 0.1);
+  border-radius: 20px;
+}

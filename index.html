@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chazki</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container-sm">
+      <form action="#">
+        <div class="mb-3">
+          <label for="nameInput" class="form-label"
+            >Nombre y Apellido o Razón social*</label
+          >
+          <input
+            class="form-control"
+            id="nameInput"
+            onchange="loadName(this.value)"
+          />
+          <div id="nameInputFeedback" class="form-text invalid-feedback">
+            Este campo es requerido.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="documentNumberInput" class="form-label"
+            >Ingresa RUC o documento de identidad*</label
+          >
+          <input
+            class="form-control"
+            id="documentNumberInput"
+            onchange="loadDocumentNumber(this.value)"
+          />
+          <div
+            id="documentNumberInputFeedback"
+            class="form-text invalid-feedback"
+          >
+            Este campo es requerido.
+          </div>
+        </div>
+        <div>
+          <label
+            for="shipmentsQuantityInput"
+            class="form-label"
+            style="margin-bottom: 0.6rem"
+            >Ingresa el número de envíos que requieres al mes por
+            servicio*</label
+          >
+          <div class="input-group mb-3">
+            <span class="input-group-text" style="width: 100px">Express</span>
+            <input
+              id="expressShipmentsQuantityInput"
+              type="number"
+              class="form-control"
+              onchange="loadExpressShipmentsQuantity(this.value)"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" style="width: 100px">Same day</span>
+            <input
+              id="sameDayShipmentsQuantityInput"
+              type="number"
+              class="form-control"
+              onchange="loadSameDayShipmentsQuantity(this.value)"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" style="width: 100px">Next day</span>
+            <input
+              id="nextDayShipmentsQuantityInput"
+              type="number"
+              class="form-control"
+              onchange="loadNextDayShipmentsQuantity(this.value)"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" style="width: 100px">Asignado</span>
+            <input
+              id="assignedShipmentsQuantityInput"
+              type="number"
+              class="form-control"
+              onchange="loadAssignedShipmentsQuantity(this.value)"
+            />
+          </div>
+          <div
+            id="serviceShipmentsInputFeedback"
+            class="form-text invalid-feedback"
+          >
+            Ingresa una cantidad mayor a cero en al menos un servicio.
+          </div>
+          <div id="shipmentsQuantityHelp" class="form-text">
+            Disclaimer: Existe costo adicional si la orden es de rutas de mas de
+            3km
+          </div>
+        </div>
+        <button class="btn btn-primary form-button" onclick="calculatePrice()">
+          Enviar
+        </button>
+      </form>
+      <div class="table-container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre o Rz. Social</th>
+              <th scope="col">N. Documento</th>
+              <th scope="col">Express</th>
+              <th scope="col">Same day</th>
+              <th scope="col">Next day</th>
+              <th scope="col">Asignado</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="js/index.js" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" />
+  </body>
+</html>
